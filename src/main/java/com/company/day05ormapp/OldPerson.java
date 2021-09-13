@@ -3,8 +3,8 @@ package com.company.day05ormapp;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "person")
-public class Person {
+@Table(name = "persons")
+public class OldPerson {
     @Id
     @Column(name = "id")
     private int id;

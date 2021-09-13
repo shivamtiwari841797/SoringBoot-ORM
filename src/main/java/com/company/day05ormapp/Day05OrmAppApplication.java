@@ -21,19 +21,21 @@ public class Day05OrmAppApplication implements CommandLineRunner {
     @Autowired
     private ConferenceService conferenceService;
 
+
     @Override
     public void run(String... args) {
-//        addPerson();
-//        updateAge();
+        addPerson();
+        updateAge();
         System.out.println(conferenceService.addTopic("topic-1", 5.0));
         System.out.println(conferenceService.getAllTopic());
         System.out.println(conferenceService.getTopic("topic-1"));
+
     }
 
     private void updateAge() {
-        Optional<Person> optPerson = personsDao.findById(0);
+        Optional<OldPerson> optPerson = personsDao.findById(0);
         if(optPerson.isPresent()) {
-            Person person = optPerson.get();
+            OldPerson person = optPerson.get();
             person.setAge(45);
             personsDao.save(person);
         } else {
@@ -42,7 +44,7 @@ public class Day05OrmAppApplication implements CommandLineRunner {
     }
 
     private void addPerson() {
-        Person person = new Person();
+        OldPerson person = new OldPerson();
         person.setAge(20);
         person.setName("Shivam");
         personsDao.save(person);

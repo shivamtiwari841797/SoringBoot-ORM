@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonsDao extends CrudRepository<Person, Integer> {
+public interface PersonsDao extends CrudRepository<OldPerson, Integer> {
 }
